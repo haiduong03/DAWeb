@@ -1,0 +1,11 @@
+<?php
+function signout()
+{
+    if (!isset($_SESSION)) {
+        session_start();
+        unset($_SESSION['user_name']);
+        session_destroy();
+        header("Location: index.php");
+    }
+}
+signout();
